@@ -254,7 +254,7 @@ def request_close(request, pk):
     rating = request.data.get('rating')
 
     # Пункт 3: если это заёмник (took у owner) — закрывает сразу
-    is_borrower = (debt.owner == request.user and debt.debt_type == 'took')
+    is_borrower = (debt.owner == request.user and debt.debt_type == 'gave')
     is_lender_counterpart = (debt.counterpart == request.user)
 
     if is_borrower:
